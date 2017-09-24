@@ -75,7 +75,7 @@ button:focus { outline: none; }
 	background: url(../img/home-bg.jpg) no-repeat;
 	background-attachment: fixed;
 	background-position: left top;
-	background-size: 100% 750px;
+	background-size: 100% 750px;  /*changes size of title background*/
 	color: white;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -89,11 +89,11 @@ button:focus { outline: none; }
 	-webkit-justify-content: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
-	height: 750px;	
+	height: 450px;	  /*changes top to bottom size of title background*/
 }
 
 @media (max-width: 1800px) {
-	.tm-intro {	background-size: 1800px 750px; }
+	.tm-intro {	background-size: 1800px 550px; }/*changes [width] and [length, top to bottom]  size of title background*/
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
