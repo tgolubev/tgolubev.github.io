@@ -65,7 +65,7 @@ h3 {
 .tm-container-wide { max-width: 1230px; }
 
 .tm-navbar-container {
-	background: rgba(255, 255, 255, 0.95);
+	background: rgba(0, 0, 0, 0.3);
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
 	height: 80px;
@@ -74,7 +74,7 @@ h3 {
     width: 100%;
     z-index: 1000;
     transition: var(--transition);
-	box-shadow: var(--shadow-sm);
+	box-shadow: none;
 }
 
 .tm-navbar-container.bg-inverse {
@@ -95,11 +95,22 @@ h3 {
 
 .navbar-nav .nav-link,
 .navbar-nav .nav-link:focus {
-	color: var(--text-dark);
+	color: white;
 }
 
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
+	color: var(--secondary-color);
+}
+
+/* Dark text for scrolled navbar */
+.tm-navbar-container.bg-inverse .navbar-nav .nav-link,
+.tm-navbar-container.bg-inverse .navbar-nav .nav-link:focus {
+	color: var(--text-dark);
+}
+
+.tm-navbar-container.bg-inverse .navbar-nav .nav-link.active,
+.tm-navbar-container.bg-inverse .navbar-nav .nav-link:hover {
 	color: var(--primary-color);
 }
 
@@ -110,9 +121,13 @@ h3 {
 	left: 30px;
 	right: 30px;
 	height: 2px;
-	background: var(--primary-color);
+	background: white;
 	transform: scaleX(0);
 	transition: transform 0.3s ease;
+}
+
+.tm-navbar-container.bg-inverse .navbar-nav .nav-link::after {
+	background: var(--primary-color);
 }
 
 .navbar-nav .nav-link.active::after,
@@ -130,10 +145,10 @@ h3 {
 button:focus { outline: none; }
 
 .tm-intro {
-	background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(14, 165, 233, 0.85) 100%), url(../img/home-bg.jpg) no-repeat;
+	background: url(../img/home-bg.jpg) no-repeat;
 	background-attachment: fixed;
-	background-position: center;
-	background-size: cover;
+	background-position: left top;
+	background-size: 100% 750px;
 	color: white;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -147,29 +162,8 @@ button:focus { outline: none; }
 	-webkit-justify-content: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
-	height: 500px;
+	height: 450px;
 	position: relative;
-	overflow: hidden;
-}
-
-.tm-intro::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-	animation: pulse 4s ease-in-out infinite;
-}
-
-@keyframes pulse {
-	0%, 100% {
-		opacity: 0.5;
-	}
-	50% {
-		opacity: 0.8;
-	}
 }
 
 @media (max-width: 1800px) {
