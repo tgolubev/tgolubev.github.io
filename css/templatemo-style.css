@@ -637,6 +637,21 @@ body.page-2 { padding-top: 80px; }
 }
 
 /* Publications Section Styling */
+.publication-category-title {
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: var(--primary-color);
+	margin-top: 3rem;
+	margin-bottom: 2rem;
+	padding-bottom: 0.75rem;
+	border-bottom: 3px solid var(--primary-color);
+	position: relative;
+}
+
+.publication-category-title:first-of-type {
+	margin-top: 1rem;
+}
+
 .publication-card {
 	background: var(--bg-white);
 	border-radius: var(--border-radius);
