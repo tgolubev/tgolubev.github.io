@@ -51,9 +51,8 @@ http://www.templatemo.com/tm-483-lumino
                     <h1 class="text-xs-center blue-text tm-page-2-title">  Ph.D. Research </h1>
                     <h1 class="text-xs-center black-text tm-page-2-title">  Drift-Diffusion Modeling of Solar Cells </h1>
                     <p class="text-xs-center tm-page-2-p tm-page-2-subtitle">
-                    Advised by <class="tm-news-text"> <a class = "blue-text" href="https://web.pa.msu.edu/cmp/people/duxbury.html"</a> Prof. Phil Duxbury</a>
+                    Advised by <a class="blue-text" href="https://web.pa.msu.edu/cmp/people/duxbury.html">Prof. Phil Duxbury</a>
                     </p>
-                <!-- <img src="img/tm-1800x600-01.jpg" class="img-fluid tm-banner-img" alt="Image">      -->      
                 </div>
             </div>                
             </div>
@@ -66,7 +65,7 @@ http://www.templatemo.com/tm-483-lumino
 allows transmission of light) and an absorber/active layer which is made of a semiconductor. The
 working principle is based on the photovoltaic effect where photons of energy greater than the electronic
 bandgap of the absorber layer excite electrons from the valence band (VB) to the conduction band
-(CB), leaving behind holes (absense of an electron, which are treated as quasi-particles). Due to an energy level difference between the cathode
+(CB), leaving behind holes (absence of an electron, which are treated as quasi-particles). Due to an energy level difference between the cathode
 and anode work functions, a solar cell has a built-in electric potential. Due to this potential and diffusion, the photogenerated free electrons and
 holes separate and move on average in opposite directions to the positive and negative contacts,
 thus generating a current. This current can be described as having contributions from drift due to
@@ -93,8 +92,8 @@ electrons and holes is dependent on the materials and architecture of the cell. 
 
 
 <p align= "justify">
-where q is the elementary charge (always positive) and is the dielectric constant. The above
-equation is assuming that is constant within each layer of the device. The current density
+where q is the elementary charge (always positive) and &epsilon; is the dielectric constant. The above
+equation is assuming that &epsilon; is constant within each layer of the device. The current density
 is separated for electrons and holes (Jn and Jp respectively) and related to the net free carrier
 generation rate U(x) by the continuity equations. </p>
 
@@ -109,9 +108,9 @@ generation rate U(x) by the continuity equations. </p>
 
 <br><br>
 
-<p align= "justify"> The equations to find U generally involve using a transfer-matrix optical model to find the photogeneration rate and also considering charge recombination and dissociation rates. The specific equations will vary depending on the solar cell device which is being modeled. Recombination loss mechanisms can be electrons and holes recombining (bimolecular recombination) or electrons/holes recombining with defects(traps) in the material (Schockley-Read-Hall recombination). 
+<p align= "justify"> The equations to find U generally involve using a transfer-matrix optical model to find the photogeneration rate and also considering charge recombination and dissociation rates. The specific equations will vary depending on the solar cell device which is being modeled. Recombination loss mechanisms can be electrons and holes recombining (bimolecular recombination) or electrons/holes recombining with defects (traps) in the material (Shockley-Read-Hall recombination).
 The current densities are also related to the electric potential and charge carrier densities through
-the drift-diffusion equations where Dn and Dp are the diffusion coefficients and  are the charge carrier mobilities. </p> 
+the drift-diffusion equations where Dn and Dp are the diffusion coefficients and &mu;n and &mu;p are the charge carrier mobilities. </p> 
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=J_n&space;=&space;-qn\mu_n\frac{\partial}{\partial&space;x}\psi&space;&plus;&space;q\mu_n&space;V_t\frac{\partial}{\partial&space;x}n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?J_n&space;=&space;-qn\mu_n\frac{\partial}{\partial&space;x}\psi&space;&plus;&space;q\mu_n&space;V_t\frac{\partial}{\partial&space;x}n" title="J_n = -qn\mu_n\frac{\partial}{\partial x}\psi + q\mu_n V_t\frac{\partial}{\partial x}n" /></a>
 
@@ -121,8 +120,7 @@ the drift-diffusion equations where Dn and Dp are the diffusion coefficients and
 
 <br><br>
 
-<p > Usually the
-where <a href="https://www.codecogs.com/eqnedit.php?latex=V_t&space;=&space;k_B&space;T/q" target="_blank"><img src="https://latex.codecogs.com/gif.latex?V_t&space;=&space;k_B&space;T/q" title="V_t = k_B T/q" /></a> is called the thermal voltage.
+<p> where <a href="https://www.codecogs.com/eqnedit.php?latex=V_t&space;=&space;k_B&space;T/q" target="_blank"><img src="https://latex.codecogs.com/gif.latex?V_t&space;=&space;k_B&space;T/q" title="V_t = k_B T/q" /></a> is called the thermal voltage.
 The drift-diffusion and current continuity equations are usually combined.  </p>
 
 <p align= "justify"> The equations can be discretized using finite differences as follows. The Poisson equation is discretized using the central difference approximation for the 2nd derivative: </p>
@@ -134,7 +132,7 @@ The drift-diffusion and current continuity equations are usually combined.  </p>
 <br><br>
 
 
-For the drift-diffusion equations, a special discretization approach called Scharfetter-Gummel is needed for the drift-diffusion equation in order to insure numerical stability. </p>
+<p align= "justify"> For the drift-diffusion equations, a special discretization approach called Scharfetter-Gummel is needed for the drift-diffusion equation in order to ensure numerical stability. </p>
 
 <br>
 
@@ -149,9 +147,9 @@ For the drift-diffusion equations, a special discretization approach called Scha
 
 <p align= "justify"> In a 1D model, the finite difference equations can be written as tridiagonal matrices which can be solved using simple techniques (i.e. Thomas algorithm). The Poisson and drift-diffusion matrix equations are solved in an iterative process in either a decoupled (Gummel method) or coupled (Newton-Raphson method) way until convergence is reached. </p>
 
-<p align= "justify"> For some soler cells, such as bulk heterojunctions where there is a complex morphology of the device layers, a 2D drift-diffusion model may be desired to explore the effects of this morphology. The same equations can still be discretized in an analogous approach, but the resulting matrix equations are no longer tridiagonal which requires use more sophisticated solvers (i.e. bicongugate stabilized gradient BiCGSTAB method) </p>. 
+<p align= "justify"> For some solar cells, such as bulk heterojunctions where there is a complex morphology of the device layers, a 2D drift-diffusion model may be desired to explore the effects of this morphology. The same equations can still be discretized in an analogous approach, but the resulting matrix equations are no longer tridiagonal which requires use of more sophisticated solvers (i.e. biconjugate stabilized gradient BiCGSTAB method).</p>
 
-<p align= "justify"> The model can also be extended to 3D which could be used to study situations where there is no 2D symmetry, such as simulating a conductive atomic force microscopy experiment which allows to measure local currents of solar cell materials. In this case we need to include the measuring probe which breaks the symmetry, requiring us to use a 3D model. A 3D model is quite computationally expensive due to the matrix equations which need to be solved become large (i.e. a small 20nm^3 region would be described by 8000x8000 matrices when using the typical 1nm mesh size). Such models need to be written in an efficient programming language such as C++ and the code must be optimized (one way is to use fast sparse matrix solvers such as BiCGSTAB). Parallelization should also be attempted. </p>.
+<p align= "justify"> The model can also be extended to 3D which could be used to study situations where there is no 2D symmetry, such as simulating a conductive atomic force microscopy experiment which allows to measure local currents of solar cell materials. In this case we need to include the measuring probe which breaks the symmetry, requiring us to use a 3D model. A 3D model is quite computationally expensive due to the matrix equations which need to be solved become large (i.e. a small 20nm^3 region would be described by 8000x8000 matrices when using the typical 1nm mesh size). Such models need to be written in an efficient programming language such as C++ and the code must be optimized (one way is to use fast sparse matrix solvers such as BiCGSTAB). Parallelization should also be attempted.</p>
 
 <p> This 3D model can be also used for modeling other electronic transport problems such as the current spreading from a conductive atomic force microscope tip. </p>
                         
@@ -161,11 +159,7 @@ For the drift-diffusion equations, a special discretization approach called Scha
                         <a href="#" class="btn btn-default btn-lg tm-gray-btn">Large</a>
                         <a href="#" class="btn btn-default btn-lg tm-gray-bordered-btn">Large</a>
                         </div>-->
-                    </div>
-                </div>
-            </div>
-    
-    
+
             <div class="row">
                 <div class="tm-section" id="tm-section-5">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
